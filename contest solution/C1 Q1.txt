@@ -1,0 +1,36 @@
+Contest1 module 1 code
+question 1st (Comapre the Triplets)
+ 
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int c[3], d[3];
+    int charliePoints = 0, davePoints = 0;
+
+    // Input Charlie's scores
+    for (int i = 0; i < 3; i++) {
+        cin >> c[i];
+    }
+
+    // Input Dave's scores
+    for (int i = 0; i < 3; i++) {
+        cin >> d[i];
+    }
+
+    // Calculate comparison points
+    for (int i = 0; i < 3; i++) {
+        if (c[i] > d[i]) {
+            charliePoints++;
+        } else if (c[i] < d[i]) {
+            davePoints++;
+        }
+    }
+
+    // Output the comparison points
+    cout << charliePoints << " " << davePoints << endl;
+
+    return 0;
+}
+

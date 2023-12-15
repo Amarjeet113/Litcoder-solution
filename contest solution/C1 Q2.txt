@@ -1,0 +1,30 @@
+Contest1 module 1 code
+question 2nd (No. of people aware of a secret
+
+#include <iostream>
+
+int main() {
+    int n, delay, forget;
+    std::cin >> n >> delay >> forget;
+
+    int people = 0;
+    int day = 1;
+    int shareDay = delay;
+
+    while (day <= n) {
+        if (day == shareDay) {
+            people++;
+            shareDay += delay;
+        }
+
+        if (day == shareDay - forget) {
+            people--;
+        }
+
+        day++;
+    }
+
+    std::cout << people << std::endl;
+
+    return 0;
+}

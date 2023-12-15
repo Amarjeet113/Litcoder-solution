@@ -1,0 +1,40 @@
+Contest1 module 2 code
+question 2nd (Recursive (super) Digit sum)
+
+  
+                                                                                                                                    #include <iostream>
+using namespace std;
+
+int superDigit(string n) {
+    // Base case: if n has only one digit, return that digit
+    if (n.length() == 1) {
+        return stoi(n);
+    }
+  
+    // Calculate the sum of the digits
+    int sum = 0;
+    for (char c : n) {
+        sum += c - '0';
+    }
+  
+    // Convert the sum to string and recursively call superDigit
+    return superDigit(to_string(sum));
+}
+
+int main() {
+    string n;
+    int k;
+    cin >> n >> k;
+  
+    // Repeat the number k times
+    string repeatedNumber;
+    for (int i = 0; i < k; i++) {
+        repeatedNumber += n;
+    }
+  
+    // Calculate the super digit of the repeated number
+    int result = superDigit(repeatedNumber);
+    cout << result << endl;
+
+    return 0;
+}

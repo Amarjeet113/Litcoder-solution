@@ -1,0 +1,31 @@
+Contest1 module 4TH  code
+question 2ND (Number of people aware of a secret)
+
+
+
+
+
+ #include <iostream>
+
+int main() {
+    int n, delay, forget;
+    std::cin >> n >> delay >> forget;
+
+    int numPeople = 1;  // Start with one person who knows the secret on the first day
+
+    for (int day = 1; day <= n; day++) {
+        // Only share the secret if the person hasn't forgotten it yet
+        if (day > forget) {
+            numPeople += numPeople;  // Double the number of people who know the secret
+        }
+
+        // Check if it's time to start sharing with new people
+        if (day >= delay) {
+            numPeople++;  // Share the secret with one new person
+        }
+    }
+
+    std::cout << numPeople << std::endl;
+
+    return 0;
+}                                                                                         
